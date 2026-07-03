@@ -156,6 +156,8 @@ button {
 }
 
 .header__logo {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
   transition: opacity var(--transition);
 }
@@ -165,7 +167,7 @@ button {
 }
 
 .header__logo-img {
-  height: 44px;
+  height: 48px; /* Немного увеличили для чёткого логотипа */
   width: auto;
   object-fit: contain;
 }
@@ -337,46 +339,50 @@ button {
 
 .menu__tabs {
   display: flex;
-  gap: 8px;
+  gap: 12px; /* Увеличили зазор между кнопками */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-bottom: 4px;
+  padding: 6px 4px 12px 4px; /* Добавили отступы сверху и снизу для теней */
 }
 
 .menu__tabs::-webkit-scrollbar {
   display: none;
 }
 
+/* УВЕЛИЧЕННЫЕ КНОПКИ КАТЕГОРИЙ (ПРАВКА ДЛЯ КЛИЕНТА) */
 .menu__tab {
   flex-shrink: 0;
   scroll-snap-align: start;
-  padding: 10px 20px;
+  padding: 14px 28px; /* Увеличили padding (плашки стали крупнее и массивнее) */
   border-radius: var(--radius);
   background-color: var(--color-surface);
   color: var(--color-text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1.05rem; /* Увеличили размер шрифта (было 0.875rem) */
+  font-weight: 600; /* Сделали текст жирнее (было 500) */
   border: 1px solid var(--color-border);
   transition: background-color var(--transition),
               color var(--transition),
               border-color var(--transition),
-              transform var(--transition);
+              transform var(--transition),
+              box-shadow var(--transition);
   white-space: nowrap;
 }
 
 .menu__tab:hover {
   background-color: var(--color-surface-hover);
   color: var(--color-text);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .menu__tab--active {
   background-color: var(--color-accent);
   color: #000000;
   border-color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: var(--shadow-accent);
 }
 
 .menu__tab--active:hover {
@@ -498,7 +504,7 @@ button {
 }
 
 .footer__logo {
-  height: 40px;
+  height: 44px;
   width: auto;
   opacity: 0.9;
 }
@@ -698,7 +704,7 @@ button {
   }
 
   .header__logo-img {
-    height: 36px;
+    height: 40px;
   }
 
   .header__phone {
@@ -723,9 +729,10 @@ button {
     padding: 48px 0;
   }
 
+  /* ДЛЯ МОБИЛОК ЕЩЕ ДОБАВИЛИ КЛИКАБЕЛЬНОСТИ И РАЗМЕРА */
   .menu__tab {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 12px 22px; 
+    font-size: 0.95rem; /* Сделали крупнее на мобилках */
   }
 
   .menu__grid {
