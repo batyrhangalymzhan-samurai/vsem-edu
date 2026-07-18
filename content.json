@@ -1,0 +1,118 @@
+{
+  "header": {
+    "logo": "images/vsem-edu-logo.png"
+  },
+  "settings": {
+    "phone": "+77011805553",
+    "hours": "09:00 – 22:00",
+    "deliveryFrom": "400 KZT",
+    "whatsappNumber": "77011805553",
+    "whatsappMessage": "Здравствуйте! Хочу оформить заказ через сайт",
+    "whatsappButtonText": "Заказать через WhatsApp",
+    "instagramUrl": "https://instagram.com/vsem.edu.korday"
+  },
+  "hero": {
+    "title": "Вкусная еда с быстрой доставкой к вам домой! 🛵",
+    "subtitle": "ВСЕМ ЕДУ — качественные блюда, быстрая доставка, каждый день 09:00–22:00",
+    "buttonText": "Смотреть меню",
+    "image": "images/hero-bg.jpeg"
+  },
+  "menu": {
+    "title": "Меню",
+    "subtitle": "Выберите категорию и просмотрите блюда",
+    "categories": [
+      {
+        "id": "pizza",
+        "title": "Пицца",
+        "items": [
+          { "image": "images/pizza.png", "alt": "Пицца" }
+        ]
+      },
+      {
+        "id": "sets",
+        "title": "🔥 Сеты",
+        "items": [
+          { "image": "images/set1.jpeg", "alt": "Сет 1" },
+          { "image": "images/set2.jpeg", "alt": "Сет 2" },
+          { "image": "images/set3.jpeg", "alt": "Сет 3" },
+          { "image": "images/set4.jpeg", "alt": "Сет 4" },
+          { "image": "images/set5.jpeg", "alt": "Сет 5" }
+        ]
+      },
+      {
+        "id": "sushi",
+        "title": "Суши & Роллы",
+        "items": [
+          { "image": "images/sushi1.jpeg", "alt": "Суши & Роллы 1" },
+          { "image": "images/sushi2.jpeg", "alt": "Суши & Роллы 2" },
+          { "image": "images/sushi3.jpeg", "alt": "Суши & Роллы 3" }
+        ]
+      },
+      {
+        "id": "hotdog",
+        "title": "Ролл Хот-дог",
+        "items": [
+          { "image": "images/roll-hotdog.jpeg", "alt": "Ролл Хот-дог" }
+        ]
+      },
+      {
+        "id": "fastfood",
+        "title": "Фаст-фуд & Паста",
+        "items": [
+          { "image": "images/fastfood.jpeg", "alt": "Фаст-фуд" },
+          { "image": "images/pasta.jpeg", "alt": "Паста" }
+        ]
+      },
+      {
+        "id": "soups",
+        "title": "Супы & Гарниры",
+        "items": [
+          { "image": "images/soups.jpeg", "alt": "Супы" },
+          { "image": "images/garniry.jpeg", "alt": "Гарниры" }
+        ]
+      },
+      {
+        "id": "salads",
+        "title": "Салаты & Вторые & Детокс",
+        "items": [
+          { "image": "images/salads.jpeg", "alt": "Салаты" },
+          { "image": "images/vtorye-blyuda.png", "alt": "Вторые блюда" },
+          { "image": "images/detox.jpeg", "alt": "Детокс" }
+        ]
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Instagram",
+    "subtitle": "Реальные отзывы из Instagram",
+    "buttonText": "подробнее в инсте",
+    "images": [
+      "images/review1.jpeg",
+      "images/review2.jpeg",
+      "images/review3.jpeg",
+      "images/review4.jpeg",
+      "images/review5.jpeg",
+      "images/review6.jpeg",
+      "images/review7.jpeg",
+      "images/review8.jpeg",
+      "images/review9.jpeg",
+      "images/review10.jpeg",
+      "images/review11.jpeg",
+      "images/review12.jpeg",
+      "images/review13.jpeg",
+      "images/review14.jpeg",
+      "images/review15.jpeg",
+      "images/review16.jpeg",
+      "images/review17.jpeg",
+      "images/review18.jpeg",
+      "images/review19.jpeg",
+      "images/review20.jpeg",
+      "images/review21.jpeg",
+      "images/review22.jpeg"
+    ]
+  },
+  "footer": {
+    "logo": "images/Всем-еду(Прозрачный-фон).png",
+    "copyright": "©️ 2026 ВСЕМ ЕДУ. Все права защищены."
+  }
+}

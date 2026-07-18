@@ -1,0 +1,9 @@
+{
+  "name": "vsem-edu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт «ВСЕМ ЕДУ» со встроенной CMS-админкой (/admin)",
+  "engines": {
+    "node": ">=18"
+  }
+}

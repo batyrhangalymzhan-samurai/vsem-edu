@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Админ-панель — ВСЕМ ЕДУ</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Login -->
+  <div id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <h1 class="login-card__logo">ВСЕМ ЕДУ</h1>
+      <p class="login-card__subtitle">Админ-панель сайта</p>
+      <label for="passwordInput">Пароль</label>
+      <input type="password" id="passwordInput" required autocomplete="current-password" placeholder="Введите пароль">
+      <button type="submit" class="btn btn-primary btn-block">Войти</button>
+      <p id="loginError" class="error-text" hidden></p>
+    </form>
+  </div>
+
+  <!-- App -->
+  <div id="appScreen" class="app" hidden>
+    <header class="app-header">
+      <div class="app-header__title">
+        <span class="app-header__brand">ВСЕМ ЕДУ</span>
+        <span class="app-header__sep">/</span>
+        <span>Админ-панель</span>
+      </div>
+      <div class="app-header__actions">
+        <span id="saveStatus" class="save-status" aria-live="polite"></span>
+        <a href="/" target="_blank" class="btn btn-outline btn-sm">Открыть сайт ↗</a>
+        <button id="logoutBtn" class="btn btn-outline btn-sm" type="button">Выйти</button>
+      </div>
+    </header>
+
+    <nav class="app-tabs" id="appTabs">
+      <button class="app-tab app-tab--active" data-tab="general" type="button">Общее</button>
+      <button class="app-tab" data-tab="menu" type="button">Меню</button>
+      <button class="app-tab" data-tab="reviews" type="button">Отзывы</button>
+    </nav>
+
+    <main class="app-content">
+
+      <!-- General -->
+      <section class="tab-panel tab-panel--active" data-tab="general">
+
+        <div class="card">
+          <h2>Контакты и режим работы</h2>
+          <div class="form-grid">
+            <label>Телефон
+              <input type="text" id="f-phone" placeholder="+77011805553">
+            </label>
+            <label>Часы работы
+              <input type="text" id="f-hours" placeholder="09:00 – 22:00">
+            </label>
+            <label>Минимальная сумма доставки
+              <input type="text" id="f-delivery" placeholder="400 KZT">
+            </label>
+            <label>Ссылка на Instagram
+              <input type="text" id="f-instagram" placeholder="https://instagram.com/...">
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Кнопка WhatsApp</h2>
+          <div class="form-grid">
+            <label>Номер WhatsApp (только цифры, с кодом страны)
+              <input type="text" id="f-wa-number" placeholder="77011805553">
+            </label>
+            <label>Текст на плавающей кнопке
+              <input type="text" id="f-wa-btn" placeholder="Заказать через WhatsApp">
+            </label>
+            <label class="form-grid__wide">Сообщение по умолчанию
+              <input type="text" id="f-wa-message" placeholder="Здравствуйте! Хочу оформить заказ через сайт">
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Главный экран (Hero)</h2>
+          <div class="form-grid">
+            <label class="form-grid__wide">Заголовок
+              <input type="text" id="f-hero-title">
+            </label>
+            <label class="form-grid__wide">Подзаголовок
+              <input type="text" id="f-hero-subtitle">
+            </label>
+            <label>Текст кнопки
+              <input type="text" id="f-hero-btn">
+            </label>
+          </div>
+          <div class="image-field-row" id="hero-image-row"></div>
+        </div>
+
+        <div class="card">
+          <h2>Логотипы и футер</h2>
+          <div class="image-field-row" id="logos-row"></div>
+          <div class="form-grid">
+            <label class="form-grid__wide">Текст копирайта в футере
+              <input type="text" id="f-footer-copyright">
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-save" data-save="general" type="button">Сохранить изменения</button>
+      </section>
+
+      <!-- Menu -->
+      <section class="tab-panel" data-tab="menu">
+        <div class="card">
+          <h2>Заголовок раздела меню</h2>
+          <div class="form-grid">
+            <label>Заголовок
+              <input type="text" id="f-menu-title">
+            </label>
+            <label>Подзаголовок
+              <input type="text" id="f-menu-subtitle">
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header-row">
+            <h2>Категории и блюда</h2>
+            <button class="btn btn-outline btn-sm" id="addCategoryBtn" type="button">+ Категория</button>
+          </div>
+          <p class="hint-text">Каждая категория — вкладка в меню на сайте. Внутри — фотографии блюд этой категории.</p>
+          <div id="categoriesList" class="categories-list"></div>
+        </div>
+
+        <button class="btn btn-primary btn-save" data-save="menu" type="button">Сохранить изменения</button>
+      </section>
+
+      <!-- Reviews -->
+      <section class="tab-panel" data-tab="reviews">
+        <div class="card">
+          <h2>Заголовок раздела отзывов</h2>
+          <div class="form-grid">
+            <label>Заголовок
+              <input type="text" id="f-reviews-title">
+            </label>
+            <label>Подзаголовок
+              <input type="text" id="f-reviews-subtitle">
+            </label>
+            <label>Текст кнопки в Instagram
+              <input type="text" id="f-reviews-btn">
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header-row">
+            <h2>Фотографии отзывов</h2>
+            <button class="btn btn-outline btn-sm" id="addReviewBtn" type="button">+ Добавить отзыв</button>
+          </div>
+          <div id="reviewsList" class="reviews-manage-grid"></div>
+        </div>
+
+        <button class="btn btn-primary btn-save" data-save="reviews" type="button">Сохранить изменения</button>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
