@@ -25,59 +25,114 @@
         "id": "pizza",
         "title": "Пицца",
         "items": [
-          { "image": "images/pizza.png", "alt": "Пицца" }
+          {
+            "image": "images/pizza.png",
+            "alt": "Пицца"
+          },
+          {
+            "image": "images/1784367255901-pizza-1784374455738.jpg",
+            "alt": "test"
+          }
         ]
       },
       {
         "id": "sets",
         "title": "🔥 Сеты",
         "items": [
-          { "image": "images/set1.jpeg", "alt": "Сет 1" },
-          { "image": "images/set2.jpeg", "alt": "Сет 2" },
-          { "image": "images/set3.jpeg", "alt": "Сет 3" },
-          { "image": "images/set4.jpeg", "alt": "Сет 4" },
-          { "image": "images/set5.jpeg", "alt": "Сет 5" }
+          {
+            "image": "images/set1.jpeg",
+            "alt": "Сет 1"
+          },
+          {
+            "image": "images/set2.jpeg",
+            "alt": "Сет 2"
+          },
+          {
+            "image": "images/set3.jpeg",
+            "alt": "Сет 3"
+          },
+          {
+            "image": "images/set4.jpeg",
+            "alt": "Сет 4"
+          },
+          {
+            "image": "images/set5.jpeg",
+            "alt": "Сет 5"
+          }
         ]
       },
       {
         "id": "sushi",
         "title": "Суши & Роллы",
         "items": [
-          { "image": "images/sushi1.jpeg", "alt": "Суши & Роллы 1" },
-          { "image": "images/sushi2.jpeg", "alt": "Суши & Роллы 2" },
-          { "image": "images/sushi3.jpeg", "alt": "Суши & Роллы 3" }
+          {
+            "image": "images/sushi1.jpeg",
+            "alt": "Суши & Роллы 1"
+          },
+          {
+            "image": "images/sushi2.jpeg",
+            "alt": "Суши & Роллы 2"
+          },
+          {
+            "image": "images/sushi3.jpeg",
+            "alt": "Суши & Роллы 3"
+          }
         ]
       },
       {
         "id": "hotdog",
         "title": "Ролл Хот-дог",
         "items": [
-          { "image": "images/roll-hotdog.jpeg", "alt": "Ролл Хот-дог" }
+          {
+            "image": "images/roll-hotdog.jpeg",
+            "alt": "Ролл Хот-дог"
+          }
         ]
       },
       {
         "id": "fastfood",
         "title": "Фаст-фуд & Паста",
         "items": [
-          { "image": "images/fastfood.jpeg", "alt": "Фаст-фуд" },
-          { "image": "images/pasta.jpeg", "alt": "Паста" }
+          {
+            "image": "images/fastfood.jpeg",
+            "alt": "Фаст-фуд"
+          },
+          {
+            "image": "images/pasta.jpeg",
+            "alt": "Паста"
+          }
         ]
       },
       {
         "id": "soups",
         "title": "Супы & Гарниры",
         "items": [
-          { "image": "images/soups.jpeg", "alt": "Супы" },
-          { "image": "images/garniry.jpeg", "alt": "Гарниры" }
+          {
+            "image": "images/soups.jpeg",
+            "alt": "Супы"
+          },
+          {
+            "image": "images/garniry.jpeg",
+            "alt": "Гарниры"
+          }
         ]
       },
       {
         "id": "salads",
         "title": "Салаты & Вторые & Детокс",
         "items": [
-          { "image": "images/salads.jpeg", "alt": "Салаты" },
-          { "image": "images/vtorye-blyuda.png", "alt": "Вторые блюда" },
-          { "image": "images/detox.jpeg", "alt": "Детокс" }
+          {
+            "image": "images/salads.jpeg",
+            "alt": "Салаты"
+          },
+          {
+            "image": "images/vtorye-blyuda.png",
+            "alt": "Вторые блюда"
+          },
+          {
+            "image": "images/detox.jpeg",
+            "alt": "Детокс"
+          }
         ]
       }
     ]
