@@ -16,9 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
   initTabs();
   initLoginForm();
 
-  document.getElementById('logoutBtn').addEventListener('click', logout);
-  document.getElementById('addCategoryBtn').addEventListener('click', onAddCategory);
-  document.getElementById('addReviewBtn').addEventListener('click', onAddReview);
+  var logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) logoutBtn.addEventListener('click', logout);
+
+  var addCategoryBtn = document.getElementById('addCategoryBtn');
+  if (addCategoryBtn) addCategoryBtn.addEventListener('click', onAddCategory);
+
+  var addReviewBtn = document.getElementById('addReviewBtn');
+  if (addReviewBtn) addReviewBtn.addEventListener('click', onAddReview);
 
   document.querySelectorAll('.btn-save').forEach(function (btn) {
     btn.addEventListener('click', function () { saveContent(btn); });
@@ -61,37 +66,89 @@ function initLoginForm() {
     e.preventDefault();
     var password = document.getElementById('passwordInput').value;
     var errorEl = document.getElementById('loginError');
+    var submitBtn = e.target.querySelector('button[type="submit"]');
     errorEl.hidden = true;
 
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Вход…';
+    }
+
     apiPost('/api/login', { password: password }, false).then(function (data) {
+      if (!data || !data.token) {
+        throw new Error('Сервер не вернул токен. Обновите страницу и попробуйте снова.');
+      }
+
       state.token = data.token;
-      localStorage.setItem('vsemEduAdminToken', state.token);
+
+      try {
+        localStorage.setItem('vsemEduAdminToken', state.token);
+      } catch (storageErr) {
+        console.warn('localStorage недоступен:', storageErr);
+      }
+
       showApp();
     }).catch(function (err) {
       errorEl.textContent = err.message || 'Ошибка входа';
       errorEl.hidden = false;
+    }).finally(function () {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Войти';
+      }
     });
   });
 }
 
 function showApp() {
-  document.getElementById('loginScreen').hidden = true;
-  document.getElementById('appScreen').hidden = false;
+  var loginScreen = document.getElementById('loginScreen');
+  var appScreen = document.getElementById('appScreen');
+
+  if (loginScreen) {
+    loginScreen.hidden = true;
+    loginScreen.setAttribute('hidden', '');
+  }
+
+  if (appScreen) {
+    appScreen.hidden = false;
+    appScreen.removeAttribute('hidden');
+  }
+
   if (!state.content) loadAndRenderContent();
 }
 
 function logout() {
   state.token = null;
   state.content = null;
-  localStorage.removeItem('vsemEduAdminToken');
-  document.getElementById('appScreen').hidden = true;
-  document.getElementById('loginScreen').hidden = false;
+
+  try {
+    localStorage.removeItem('vsemEduAdminToken');
+  } catch (storageErr) {
+    console.warn('localStorage недоступен:', storageErr);
+  }
+
+  var loginScreen = document.getElementById('loginScreen');
+  var appScreen = document.getElementById('appScreen');
+
+  if (appScreen) {
+    appScreen.hidden = true;
+    appScreen.setAttribute('hidden', '');
+  }
+
+  if (loginScreen) {
+    loginScreen.hidden = false;
+    loginScreen.removeAttribute('hidden');
+  }
 }
 
 function loadAndRenderContent() {
   apiGet('/api/content').then(function (data) {
     state.content = data;
-    renderAll();
+    try {
+      renderAll();
+    } catch (renderErr) {
+      showToast((renderErr && renderErr.message) || 'Ошибка отображения админки', 'error');
+    }
   }).catch(function (err) {
     showToast(err.message || 'Не удалось загрузить контент сайта', 'error');
   });
