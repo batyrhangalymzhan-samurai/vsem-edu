@@ -106,12 +106,13 @@ function showApp() {
 
   if (loginScreen) {
     loginScreen.hidden = true;
-    loginScreen.setAttribute('hidden', '');
+    loginScreen.style.display = 'none';
   }
 
   if (appScreen) {
     appScreen.hidden = false;
     appScreen.removeAttribute('hidden');
+    appScreen.style.display = '';
   }
 
   if (!state.content) loadAndRenderContent();
@@ -132,12 +133,13 @@ function logout() {
 
   if (appScreen) {
     appScreen.hidden = true;
-    appScreen.setAttribute('hidden', '');
+    appScreen.style.display = 'none';
   }
 
   if (loginScreen) {
     loginScreen.hidden = false;
     loginScreen.removeAttribute('hidden');
+    loginScreen.style.display = '';
   }
 }
 

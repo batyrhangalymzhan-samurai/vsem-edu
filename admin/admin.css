@@ -67,6 +67,14 @@ input { font-family: inherit; }
 }
 
 /* --- Login --- */
+.login-screen[hidden] {
+  display: none !important;
+}
+
+.app[hidden] {
+  display: none !important;
+}
+
 .login-screen {
   min-height: 100vh;
   display: flex;
