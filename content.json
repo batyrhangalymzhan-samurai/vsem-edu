@@ -5,7 +5,7 @@
   "settings": {
     "phone": "+77011805553",
     "hours": "09:00 – 22:00",
-    "deliveryFrom": "400 KZT",
+    "deliveryFrom": "400 - 1000KZT",
     "whatsappNumber": "77011805553",
     "whatsappMessage": "Здравствуйте! Хочу оформить заказ через сайт",
     "whatsappButtonText": "Заказать через WhatsApp",
@@ -122,12 +122,12 @@
             "alt": "Салаты"
           },
           {
-            "image": "images/vtorye-blyuda.png",
-            "alt": "Вторые блюда"
-          },
-          {
             "image": "images/detox.jpeg",
             "alt": "Детокс"
+          },
+          {
+            "image": "images/1788019603460-salads-1788019602093.jpg",
+            "alt": "Салаты & Вторые & Детокс"
           }
         ]
       }
