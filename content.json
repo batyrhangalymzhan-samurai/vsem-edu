@@ -26,14 +26,6 @@
         "title": "Пицца",
         "items": [
           {
-            "image": "images/pizza.png",
-            "alt": "Пицца"
-          },
-          {
-            "image": "images/1789816349380-pizza-1789816348466.jpg",
-            "alt": "Пицца"
-          },
-          {
             "image": "images/1789815796407-pizza-1789815794708.jpg",
             "alt": "Пицца"
           },
@@ -83,6 +75,10 @@
           },
           {
             "image": "images/1789816150939-pizza-1789816150238.jpg",
+            "alt": "Пицца"
+          },
+          {
+            "image": "images/1794991441240-pizza-1794991439098.jpg",
             "alt": "Пицца"
           }
         ]
